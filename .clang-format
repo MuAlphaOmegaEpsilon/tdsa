@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+Language: Cpp
+
+AccessModifierOffset: -2
+AllowShortBlocksOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: InlineOnly
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakBeforeMultilineStrings: true
+BreakBeforeBraces: Allman
+IndentPPDirectives: BeforeHash
+IndentWidth: 4
+PointerAlignment: Left
+SpaceAfterTemplateKeyword: false
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeParens: Never
+SpacesInContainerLiterals: false
+TabWidth: 4
+UseTab: Always
