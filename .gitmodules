@@ -1,0 +1,3 @@
+[submodule "3rd-party/algorythm"]
+	path = 3rd-party/algorythm
+	url = git@github.com:mualphaomegaepsilon/algorythm
