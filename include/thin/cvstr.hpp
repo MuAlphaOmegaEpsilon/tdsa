@@ -1,4 +1,5 @@
 #pragma once
+#include "../algo/strlen.hpp"
 #include <stddef.h>
 
 #define NX noexcept
@@ -13,7 +14,7 @@ struct cvstr
 	const char* const data;
 	const size_t length;
 
-	CX cvstr(const char* s) NX : data(s), length(strlen(s)) {}
+	CX cvstr(const char* s) NX : data(s), length(algo::strlen(s)) {}
 	CX cvstr(const char* s, size_t len) NX : data(s), length(len) {}
 	// Utilities
 	ND CX bool empty() CNX { return !length; }
@@ -26,14 +27,6 @@ struct cvstr
 	// Iterators
 	ND CX const char* begin() CNX { return data; }
 	ND CX const char* end() CNX { return data + length; }
-
-  private:
-	CX static size_t strlen(const char* s) NX
-	{
-		const char* needle = s;
-		while(*needle) ++needle;
-		return static_cast<size_t>(needle - s);
-	}
 };
 } // namespace thin
 

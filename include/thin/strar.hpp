@@ -9,7 +9,8 @@
 
 namespace thin
 {
-template<class... varargs> struct strar
+template<class... varargs>
+struct strar
 {
 	array<cvstr, sizeof...(varargs)> arr;
 

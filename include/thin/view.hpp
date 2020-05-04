@@ -8,7 +8,8 @@
 
 namespace thin
 {
-template<class T> struct view
+template<class T>
+struct view
 {
 	T* data;
 	size_t size;
@@ -29,7 +30,8 @@ template<class T> struct view
 	ND CX const T* begin() CNX { return data; }
 	ND CX const T* end() CNX { return data + size; }
 };
-template<class T> view(T*, size_t) -> view<T>;
+template<class T>
+view(T*, size_t) -> view<T>;
 } // namespace thin
 
 #undef NX

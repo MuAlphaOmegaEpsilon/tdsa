@@ -8,7 +8,8 @@
 
 namespace thin
 {
-template<class T, size_t N> struct array
+template<class T, size_t N>
+struct array
 {
 	T data[N];
 

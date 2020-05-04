@@ -10,8 +10,8 @@ int main()
 
 	// Compile-time checks
 	constexpr revit int_rev {ground_truth + 5};
-	static_assert(*int_rev == 5, "Wrong int_rev operator*.");
-	static_assert(*(int_rev + 1) == 4, "Wrong int_rev operator+.");
+	static_assert(*int_rev == 5);
+	static_assert(*(int_rev + 1) == 4);
 
 	puts("Success.");
 	return 0;

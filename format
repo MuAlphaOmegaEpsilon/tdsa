@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+
+cd "$(dirname "$0")"
+
+clang-format-10 -i include/algo/*.hpp
+clang-format-10 -i include/thin/*.hpp
+clang-format-10 -i tests/algo/*.cpp
+clang-format-10 -i tests/thin/*.cpp
+clang-format-10 -i tests/*.hpp

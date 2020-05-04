@@ -8,7 +8,8 @@
 
 namespace thin
 {
-template<class T> struct revit
+template<class T>
+struct revit
 {
 	T* ptr;
 
@@ -31,7 +32,8 @@ template<class T> struct revit
 	ND CX bool operator==(const revit other) CNX { return ptr == other.ptr; }
 	ND CX bool operator==(const T* other) CNX { return ptr == other + 1; }
 };
-template<class T> revit(T*) -> revit<T>;
+template<class T>
+revit(T*) -> revit<T>;
 } // namespace thin
 
 #undef NX

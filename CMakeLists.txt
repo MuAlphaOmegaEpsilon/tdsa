@@ -1,11 +1,11 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.17)
 
 PROJECT(
-  thin LANGUAGES CXX
-  DESCRIPTION "A collection of C++ data structures that are actually thin.")
+  tdsa LANGUAGES CXX
+  DESCRIPTION "A collection of C++ thin data structures and algorithms.")
 
-ADD_LIBRARY(thin INTERFACE)
-TARGET_INCLUDE_DIRECTORIES(thin INTERFACE include)
+ADD_LIBRARY(tdsa INTERFACE)
+TARGET_INCLUDE_DIRECTORIES(tdsa INTERFACE include)
 
 # Override defaults if building this library as standalone
 IF(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
@@ -16,10 +16,8 @@ IF(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
   SET(CMAKE_CXX_STANDARD_REQUIRED ON)
   SET(CMAKE_CXX_EXTENSIONS OFF)
   SET(CMAKE_CXX_STANDARD 20)
-  SET(CMAKE_CXX_INCLUDE_WHAT_YOU_USE iwyu -Xiwyu --transitive-includes-only)
-  SET(CMAKE_CXX_CLANG_TIDY clang-tidy-10)
   TARGET_COMPILE_OPTIONS(
-    thin
+    tdsa
     INTERFACE -Wall
               -Warray-bounds
               -Wdouble-promotion
@@ -43,5 +41,7 @@ IF(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
               -Wuninitialized)
 ENDIF()
 
-INCLUDE(CTest)
-ADD_SUBDIRECTORY(tests)
+IF(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+	INCLUDE(CTest)
+	ADD_SUBDIRECTORY(tests)
+ENDIF()
