@@ -9,6 +9,7 @@ AllowShortIfStatementsOnASingleLine: WithoutElse
 AllowShortLambdasOnASingleLine: All
 AllowShortLoopsOnASingleLine: true
 AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: Yes
 BreakBeforeBraces: Allman
 IndentPPDirectives: BeforeHash
 IndentWidth: 4
