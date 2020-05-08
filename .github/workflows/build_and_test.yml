@@ -1,0 +1,16 @@
+name: CMake+CTest - Build and test
+
+on:
+  push:
+    paths:
+      - include/*
+      - tests/*
+      - CMakeLists.txt
+      - .github/workflows/build_and_test.yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build and test
+        run: ctest --build-and-test . build --parallel --build-generator "Unix Makefiles" --test-command ctest --output-on-failure
