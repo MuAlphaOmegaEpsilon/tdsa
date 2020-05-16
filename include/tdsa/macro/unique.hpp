@@ -1,3 +1,3 @@
 #pragma once
-#include "concatenate.hpp"
-#define UNIQUE(basename) CONCATENATE(basename, __LINE__)
+#include "concat.hpp"
+#define UNIQUE(basename) CONCAT(basename, __LINE__)
