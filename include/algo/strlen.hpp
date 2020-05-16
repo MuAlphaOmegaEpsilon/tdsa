@@ -10,7 +10,7 @@ NSC size_t strlen(const char* s) NX
 	while(*needle) ++needle;
 	return static_cast<size_t>(needle - s);
 }
-NSC size_t strlen(const char*const* arr, size_t extra_num) NX
+NSC size_t strlen(const char* const* arr, size_t extra_num) NX
 {
 	size_t length = 0;
 	do
@@ -19,7 +19,7 @@ NSC size_t strlen(const char*const* arr, size_t extra_num) NX
 	return length;
 }
 template<size_t N>
-NSC size_t strlen(const char*const (&arr)[N]) NX
+NSC size_t strlen(const char* const (&arr)[N]) NX
 {
 	size_t length = 0;
 	for(const char* s : arr) length += strlen(s);
