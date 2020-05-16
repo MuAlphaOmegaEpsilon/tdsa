@@ -14,7 +14,6 @@ int main()
 	static_assert(strlen(seven_chars) == 7);
 	static_assert(strlen(hello_world + 1, 1) == 6);
 	static_assert(strlen(hello_world) == 11);
-	static_assert(strlen(string_array[0]) == 5);
 	static_assert(strlen(string_array) == 16);
 
 	puts("Success.");
