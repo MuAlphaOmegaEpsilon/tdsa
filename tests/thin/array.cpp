@@ -1,4 +1,4 @@
-#include <thin/array.hpp> // for array
+#include <thin/array.hpp>
 
 extern "C" int puts(const char*) noexcept;
 
