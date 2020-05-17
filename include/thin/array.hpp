@@ -20,6 +20,9 @@ struct array
 	ND CX T& back() NX { return data[N - 1]; }
 	ND CX const T& operator[](size_t index) CNX { return data[index]; }
 	ND CX const T& back() CNX { return data[N - 1]; }
+	// Conversions
+	ND CX operator T*() NX { return data; }
+	ND CX operator const T*() CNX { return data; }
 	// Iterators
 	ND CX T* begin() NX { return data; }
 	ND CX T* end() NX { return data + N; }
