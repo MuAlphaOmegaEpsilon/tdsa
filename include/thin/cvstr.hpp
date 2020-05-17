@@ -14,6 +14,8 @@ struct cvstr
 	const char* const data;
 	const size_t length;
 
+	template <size_t N>
+	CX cvstr(const char (&s)[]) NX : data(s), length(N) {}
 	CX cvstr(const char* s) NX : data(s), length(algo::strlen(s)) {}
 	CX cvstr(const char* s, size_t len) NX : data(s), length(len) {}
 	// Utilities
