@@ -24,12 +24,19 @@ struct view
 	// Conversions
 	ND CX operator T*() NX { return data; }
 	ND CX operator const T*() CNX { return data; }
+	CX view& operator=(const T* other) NX
+	{
+		data = other;
+		return *this;
+	}
 	// Iterators
 	ND CX T* begin() NX { return data; }
 	ND CX T* end() NX { return data + size; }
 	ND CX const T* begin() CNX { return data; }
 	ND CX const T* end() CNX { return data + size; }
 };
+template<class T, class SIZE_T = size_t, SIZE_T N>
+view(T (&)[N]) -> view<T, SIZE_T>;
 template<class T, class SIZE_T = size_t>
 view(T*, SIZE_T) -> view<T, SIZE_T>;
 } // namespace thin
