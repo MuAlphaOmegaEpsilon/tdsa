@@ -3,10 +3,7 @@
 
 extern "C" int puts(const char*) noexcept;
 
-constexpr bool revert(const int& a, const int& b) noexcept
-{
-	return a > b;
-}
+constexpr bool revert(const int& a, const int& b) noexcept { return a > b; }
 
 int main()
 {
