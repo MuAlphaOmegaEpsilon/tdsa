@@ -2,8 +2,8 @@
 
 extern "C" int puts(const char*) noexcept;
 
-[[nodiscard]] constexpr bool test(bool value, const char* message) noexcept
+[[nodiscard]] constexpr bool test(bool cond, const char* message) noexcept
 {
-	if(value) puts(message);
-	return value;
+	if(!cond) puts(message);
+	return cond;
 }
