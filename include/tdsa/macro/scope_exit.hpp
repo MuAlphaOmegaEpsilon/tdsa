@@ -1,5 +1,4 @@
 #pragma once
 #include "unique.hpp"
 #include <thin/scope_guard.hpp>
-#define SCOPE_EXIT(f)                                                          \
-	thin::scope_guard UNIQUE(scopeGuard) { f }
+#define SCOPE_EXIT thin::scope_guard UNIQUE(scopeGuard) =
