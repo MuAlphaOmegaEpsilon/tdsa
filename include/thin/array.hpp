@@ -1,4 +1,5 @@
 #pragma once
+#include <assert.h>
 #include <stddef.h>
 
 #define NX noexcept
@@ -16,10 +17,26 @@ struct array
 	// Utilities
 	ND CX SIZE_T size() CNX { return static_cast<SIZE_T>(N); }
 	// Accessors
-	ND CX T& operator[](size_t index) NX { return data[index]; }
-	ND CX T& back() NX { return data[N - 1]; }
-	ND CX const T& operator[](size_t index) CNX { return data[index]; }
-	ND CX const T& back() CNX { return data[N - 1]; }
+	ND CX T& operator[](size_t index) NX
+	{
+		assert(index < N);
+		return data[index];
+	}
+	ND CX const T& operator[](size_t index) CNX
+	{
+		assert(index < N);
+		return data[index];
+	}
+	ND CX T& back() NX
+	{
+		assert(N - 1 < N);
+		return data[N - 1];
+	}
+	ND CX const T& back() CNX
+	{
+		assert(N - 1 < N);
+		return data[N - 1];
+	}
 	// Conversions
 	ND CX operator T*() NX
 	{
