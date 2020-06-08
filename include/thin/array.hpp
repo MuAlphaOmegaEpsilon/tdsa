@@ -8,13 +8,13 @@
 
 namespace thin
 {
-template<class T, size_t N>
+template<class T, size_t N, class SIZE_T = size_t>
 struct array
 {
 	T data[N];
 
 	// Utilities
-	ND CX size_t size() CNX { return N; }
+	ND CX SIZE_T size() CNX { return static_cast<SIZE_T>(N); }
 	// Accessors
 	ND CX T& operator[](size_t index) NX { return data[index]; }
 	ND CX T& back() NX { return data[N - 1]; }
