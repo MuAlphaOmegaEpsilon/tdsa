@@ -11,7 +11,7 @@ namespace thin
 template<class T, size_t N, class SIZE_T = size_t>
 struct array
 {
-	T data[N];
+	T data[N ? N : 1];
 
 	// Utilities
 	ND CX SIZE_T size() CNX { return static_cast<SIZE_T>(N); }
@@ -21,13 +21,21 @@ struct array
 	ND CX const T& operator[](size_t index) CNX { return data[index]; }
 	ND CX const T& back() CNX { return data[N - 1]; }
 	// Conversions
-	ND CX operator T*() NX { return data; }
-	ND CX operator const T*() CNX { return data; }
+	ND CX operator T*() NX
+	{
+		if constexpr(!N) return nullptr;
+		return data;
+	}
+	ND CX operator const T*() CNX
+	{
+		if constexpr(!N) return nullptr;
+		return data;
+	}
 	// Iterators
-	ND CX T* begin() NX { return data; }
-	ND CX T* end() NX { return data + N; }
-	ND CX const T* begin() CNX { return data; }
-	ND CX const T* end() CNX { return data + N; }
+	ND CX T* begin() NX { return operator T*; }
+	ND CX T* end() NX { return operator T* + N; }
+	ND CX const T* begin() CNX { return operator T*; }
+	ND CX const T* end() CNX { return operator T* + N; }
 };
 template<class T, class... varargs>
 array(T first, varargs... list) -> array<T, 1 + sizeof...(varargs)>;
