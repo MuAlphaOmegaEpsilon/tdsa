@@ -10,7 +10,8 @@ AllowShortLambdasOnASingleLine: All
 AllowShortLoopsOnASingleLine: true
 AlwaysBreakBeforeMultilineStrings: true
 AlwaysBreakTemplateDeclarations: Yes
-BinPackArguments: true
+BinPackArguments: false
+BinPackParameters: false
 BreakBeforeBraces: Allman
 IndentPPDirectives: BeforeHash
 IndentWidth: 4
