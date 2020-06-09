@@ -11,9 +11,10 @@ namespace thin
 {
 struct cvstr
 {
-	const char* const data;
-	const size_t length;
+	const char* data {nullptr};
+	size_t length {0};
 
+	CX cvstr() NX = default;
 	template<size_t N>
 	CX cvstr(const char (&s)[]) NX : data(s), length(N)
 	{
