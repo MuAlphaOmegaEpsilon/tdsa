@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-python@master
         with:
-          python-version: '3.x'
+          python-version: "3.x"
       # `git submodule update --init --recursive` doesn't work.
       - name: Clone submodules as standard repositories
         run: git clone https://github.com/MuAlphaOmegaEpsilon/cmake
