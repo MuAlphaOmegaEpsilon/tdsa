@@ -34,9 +34,15 @@ struct ver3
 								   minor((compact >> 12u) & 0x000003ffu),
 								   patch(compact & 0x00000fffu)
 	{
+		assert(major < 1024);
+		assert(minor < 1024);
+		assert(patch < 4096);
 	}
 	ND CX operator uint32_t() CNX
 	{
+		assert(major < 1024);
+		assert(minor < 1024);
+		assert(patch < 4096);
 		return major << 22u | minor << 12u | patch;
 	}
 	ND operator castr<MAX_C>() CNX
