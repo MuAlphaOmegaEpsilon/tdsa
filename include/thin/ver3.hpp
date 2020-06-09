@@ -51,8 +51,12 @@ struct ver3
 		assert(major < 1024);
 		assert(minor < 1024);
 		assert(patch < 4096);
-		::snprintf(s.data, 15, "%" PRIuFAST16 ".%" PRIuFAST16 ".%" PRIuFAST16,
-				   major, minor, patch);
+		::snprintf(s,
+				   MAX_C,
+				   "%" PRIuFAST16 ".%" PRIuFAST16 ".%" PRIuFAST16,
+				   major,
+				   minor,
+				   patch);
 		return s;
 	}
 	ND operator const char*() CNX
