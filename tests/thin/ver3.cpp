@@ -16,9 +16,9 @@ int main()
 	static_assert(maximum == UINT32_MAX);
 
 	// Runtime checks
-	castr<ver3::MAX_C> stringVersion = ver3 {1u, 2u, 3u};
+	const char* stringVersion = ver3 {1023u, 1023u, 4095u};
 	bool result =
-		test(strcmp(stringVersion, "1.2.3") == 0, "Wrong string conversion.");
+		test(strcmp(stringVersion, "1023.1023.4095") == 0, "Wrong string conversion.");
 
 	if(result) puts("Success.");
 	return result ? 0 : 1;
