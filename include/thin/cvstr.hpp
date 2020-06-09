@@ -1,5 +1,6 @@
 #pragma once
 #include "../algo/strlen.hpp"
+#include <assert.h>
 #include <stddef.h>
 
 #define NX noexcept
@@ -25,8 +26,12 @@ struct cvstr
 	ND CX bool empty() CNX { return !length; }
 	ND CX size_t size() CNX { return length + 1; }
 	// Accessors
-	ND CX char back() CNX { return data[length - 1]; }
-	ND CX const char& operator[](size_t index) CNX { return data[index]; }
+	ND CX char back() CNX { return length ? data[length - 1] : '\0'; }
+	ND CX const char& operator[](size_t index) CNX
+	{
+		assert(index < length);
+		return data[index];
+	}
 	// Conversions
 	ND CX operator const char*() CNX { return data; }
 	// Iterators
