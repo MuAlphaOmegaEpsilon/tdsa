@@ -9,16 +9,15 @@
 
 namespace thin
 {
-template<class... varargs>
+template<size_t N, class SIZE_T = size_t>
 struct strar
 {
-	array<cvstr, sizeof...(varargs)> arr;
+	array<cvstr, N, SIZE_T> arr {};
 
-	CX strar(varargs... va) NX : arr {va...} {}
 	// Utilities
-	ND CX size_t size() CNX { return sizeof...(varargs); }
+	ND CX SIZE_T size() CNX { return static_cast<SIZE_T>(N); }
 	// Accessors
-	ND CX const cvstr& back() CNX { return arr[sizeof...(varargs) - 1]; }
+	ND CX const cvstr& back() CNX { return arr.back(); }
 	ND CX const cvstr& operator[](size_t index) CNX { return arr[index]; }
 	// Iterators
 	ND CX cvstr* begin() NX { return arr.begin(); }
@@ -26,6 +25,8 @@ struct strar
 	ND CX const cvstr* begin() CNX { return arr.begin(); }
 	ND CX const cvstr* end() CNX { return arr.end(); }
 };
+template<class... varargs>
+strar(varargs...) -> strar<sizeof...(varargs)>;
 } // namespace thin
 
 #undef NX
