@@ -12,6 +12,8 @@ namespace thin
 template<class T, size_t PRE_ALLOC, class SIZE_T = size_t>
 struct steap
 {
+	static_assert(PRE_ALLOC);
+
 	SIZE_T size;
 	T* heap;
 	T stack[PRE_ALLOC];
