@@ -55,13 +55,10 @@ struct ver3
 				   major, minor, patch);
 		return s;
 	}
-	ND castr<MAX_C> str() CNX { return this->operator castr<MAX_C>(); }
-	/*
 	ND operator const char*() CNX
 	{
-		return this->operator castr<MAX_C>();
+		return operator castr<MAX_C>();
 	}
-	*/
 };
 } // namespace thin
 #undef NX
