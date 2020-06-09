@@ -59,10 +59,7 @@ struct ver3
 				   patch);
 		return s;
 	}
-	ND operator const char*() CNX
-	{
-		return operator castr<MAX_C>();
-	}
+	ND operator const char*() CNX { return operator castr<MAX_C>(); }
 };
 } // namespace thin
 #undef NX
