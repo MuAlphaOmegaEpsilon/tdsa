@@ -9,7 +9,7 @@
 
 namespace thin
 {
-template<class T, size_t N, class SIZE_T = size_t>
+template<class T, size_t N = 0, class SIZE_T = size_t>
 struct array
 {
 	T data[N ? N : 1];
