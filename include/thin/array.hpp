@@ -19,21 +19,25 @@ struct array
 	// Accessors
 	ND CX T& operator[](size_t index) NX
 	{
+		static_assert(N);
 		assert(index < N);
 		return data[index];
 	}
 	ND CX const T& operator[](size_t index) CNX
 	{
+		static_assert(N);
 		assert(index < N);
 		return data[index];
 	}
 	ND CX T& back() NX
 	{
+		static_assert(N);
 		assert(N - 1 < N);
 		return data[N - 1];
 	}
 	ND CX const T& back() CNX
 	{
+		static_assert(N);
 		assert(N - 1 < N);
 		return data[N - 1];
 	}
