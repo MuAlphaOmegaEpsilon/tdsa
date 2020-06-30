@@ -18,13 +18,13 @@ struct strar
 	// Accessors
 	ND CX const char*& back() NX { return arr.back(); }
 	ND CX const char*& operator[](size_t index) NX { return arr[index]; }
-	ND CX const char*const& back() CNX { return arr.back(); }
-	ND CX const char*const& operator[](size_t index) CNX { return arr[index]; }
+	ND CX const char* const& back() CNX { return arr.back(); }
+	ND CX const char* const& operator[](size_t index) CNX { return arr[index]; }
 	// Iterators
 	ND CX const char** begin() NX { return arr.begin(); }
 	ND CX const char** end() NX { return arr.end(); }
-	ND CX const char*const* begin() CNX { return arr.begin(); }
-	ND CX const char*const* end() CNX { return arr.end(); }
+	ND CX const char* const* begin() CNX { return arr.begin(); }
+	ND CX const char* const* end() CNX { return arr.end(); }
 };
 template<class... varargs>
 strar(varargs...) -> strar<sizeof...(varargs)>;

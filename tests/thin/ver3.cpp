@@ -17,8 +17,8 @@ int main()
 
 	// Runtime checks
 	const char* stringVersion = ver3 {1023u, 1023u, 4095u};
-	bool result =
-		test(strcmp(stringVersion, "1023.1023.4095") == 0, "Wrong string conversion.");
+	bool result = test(strcmp(stringVersion, "1023.1023.4095") == 0,
+					   "Wrong string conversion.");
 
 	if(result) puts("Success.");
 	return result ? 0 : 1;

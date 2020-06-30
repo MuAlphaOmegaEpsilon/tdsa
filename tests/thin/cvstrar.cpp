@@ -2,7 +2,7 @@
 
 extern "C" int puts(const char*) noexcept;
 
-template <size_t COUNT>
+template<size_t COUNT>
 constexpr size_t count(thin::strar<COUNT> strings)
 {
 	return strings.size();
@@ -18,7 +18,7 @@ int main()
 	constexpr strar<5> one_to_five {"1", "2", "3", "4", "5"};
 	constexpr strar hello_world {"Hello", "C++", "world!"};
 	static_assert(zero_allowed.size() == 0);
-	static_assert(count(strar{"A", "B", "C"}) == 3);
+	static_assert(count(strar {"A", "B", "C"}) == 3);
 	static_assert(unset[0] == nullptr);
 	static_assert(unset[0].length == 0);
 	static_assert(one_to_five[0][0] == '1');

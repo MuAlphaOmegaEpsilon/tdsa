@@ -9,7 +9,7 @@ constexpr int accumulate(T& int_collection)
 	for(const int value : int_collection) result += value;
 	return result;
 }
-template <size_t N>
+template<size_t N>
 constexpr size_t count(thin::array<int, N> a)
 {
 	return a.size();
@@ -25,7 +25,7 @@ int main()
 	constexpr array<int, 10> zero_to_nine {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	constexpr array<int, 5> partial {0, 1};
 	constexpr array<int, 3> zero_init {};
-	static_assert(count(array{1,2,3}) == 3);
+	static_assert(count(array {1, 2, 3}) == 3);
 	static_assert(zero_to_nine.size() == 10);
 	static_assert(zero_to_nine.back() == 9);
 	static_assert(zero_to_nine[7] == 7);
