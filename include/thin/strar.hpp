@@ -1,5 +1,5 @@
 #pragma once
-#include "array.hpp"
+#include "ra.hpp"
 
 #define NX noexcept
 #define CNX const noexcept
@@ -11,7 +11,7 @@ namespace thin
 template<size_t N = 0, class SIZE_T = size_t>
 struct strar
 {
-	array<const char*, N, SIZE_T> arr {};
+	ra<const char*, N, SIZE_T> arr {};
 
 	// Utilities
 	ND CX SIZE_T size() CNX { return static_cast<SIZE_T>(N); }

@@ -10,7 +10,7 @@
 namespace thin
 {
 template<class T, size_t N = 0, class SIZE_T = size_t>
-struct array
+struct ra
 {
 	T data[N ? N : 1];
 
@@ -59,7 +59,7 @@ struct array
 	ND CX const T* end() CNX { return operator const T*() + N; }
 };
 template<class T, class... varargs>
-array(T first, varargs... list) -> array<T, 1 + sizeof...(varargs)>;
+ra(T first, varargs... list) -> ra<T, 1 + sizeof...(varargs)>;
 } // namespace thin
 
 #undef NX

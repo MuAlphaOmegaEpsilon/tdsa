@@ -1,5 +1,5 @@
 #include <algo/min.hpp>
-#include <thin/array.hpp>
+#include <thin/ra.hpp>
 
 extern "C" int puts(const char*) noexcept;
 
@@ -11,7 +11,7 @@ int main()
 
 	// Compile-time checks
 	constexpr int zero_to_three[] {0, 1, 2, 3};
-	constexpr thin::array one_to_five {1, 2, 3, 4, 5};
+	constexpr thin::ra one_to_five {1, 2, 3, 4, 5};
 	static_assert(min(5, 7) == 5);
 	static_assert(min(5, 7, &revert) == 7);
 	static_assert(min(zero_to_three) == 0);

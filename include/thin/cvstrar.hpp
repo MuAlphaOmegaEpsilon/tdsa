@@ -1,5 +1,5 @@
 #pragma once
-#include "array.hpp"
+#include "ra.hpp"
 #include "cvstr.hpp"
 
 #define NX noexcept
@@ -12,7 +12,7 @@ namespace thin
 template<size_t N, class SIZE_T = size_t>
 struct strar
 {
-	array<cvstr, N, SIZE_T> arr {};
+	ra<cvstr, N, SIZE_T> arr {};
 
 	// Utilities
 	ND CX SIZE_T size() CNX { return static_cast<SIZE_T>(N); }

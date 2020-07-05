@@ -1,4 +1,4 @@
-#include <thin/array.hpp>
+#include <thin/ra.hpp>
 
 extern "C" int puts(const char*) noexcept;
 
@@ -10,7 +10,7 @@ constexpr int accumulate(T& int_collection)
 	return result;
 }
 template<size_t N>
-constexpr size_t count(thin::array<int, N> a)
+constexpr size_t count(thin::ra<int, N> a)
 {
 	return a.size();
 }
@@ -20,12 +20,12 @@ int main()
 	using namespace thin;
 
 	// Compile-time checks
-	[[maybe_unused]] constexpr array<int> zero_allowed {};
-	[[maybe_unused]] constexpr array deduced_type_and_size {0, 1, 2, 3, 4};
-	constexpr array<int, 10> zero_to_nine {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	constexpr array<int, 5> partial {0, 1};
-	constexpr array<int, 3> zero_init {};
-	static_assert(count(array {1, 2, 3}) == 3);
+	[[maybe_unused]] constexpr ra<int> zero_allowed {};
+	[[maybe_unused]] constexpr ra deduced_type_and_size {0, 1, 2, 3, 4};
+	constexpr ra<int, 10> zero_to_nine {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	constexpr ra<int, 5> partial {0, 1};
+	constexpr ra<int, 3> zero_init {};
+	static_assert(count(ra {1, 2, 3}) == 3);
 	static_assert(zero_to_nine.size() == 10);
 	static_assert(zero_to_nine.back() == 9);
 	static_assert(zero_to_nine[7] == 7);
@@ -34,7 +34,7 @@ int main()
 	static_assert(!zero_init[0] && !zero_init[1] && !zero_init[2]);
 
 	// Runtime checks
-	array rw_ints {0, 1, 2, 3};
+	ra rw_ints {0, 1, 2, 3};
 	for(int i = 0; i < 4; i++)
 	{
 		const int new_value = (i + 1) * 2;
