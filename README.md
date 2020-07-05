@@ -17,7 +17,7 @@ Thin data structures:
 * [thin/revit.hpp](include/thin/revit.hpp): a generic reverse iterator.
 * [thin/scope_guard.hpp](include/thin/scope_guard.hpp): a guard that runs a given lambda when going out of scope.
 * [thin/steap.hpp](include/thin/steap.hpp): an object that mixes stack and heap allocation.
-* [thin/strar.hpp](include/thin/strar.hpp): an array of C-style view-based strings.
+* [thin/strar.hpp](include/thin/strar.hpp): an array of plain C-style strings.
 * [thin/ver3.hpp](include/thin/ver3.hpp): a container for versioning with a MAJOR, MINOR and PATCH versions.
 * [thin/view.hpp](include/thin/view.hpp): a generic view over a memory-contiguous collection.
 
