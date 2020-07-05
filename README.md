@@ -13,6 +13,7 @@ Algorithms:
 Thin data structures:
 * [thin/castr.hpp](include/thin/castr.hpp): a C-style array-based string.
 * [thin/cvstr.hpp](include/thin/cvstr.hpp): a C-style view-based string.
+* [thin/cvstrar.hpp](include/thin/cvstrar.hpp): an array of [cvstr](include/thin/cvstr.hpp)-based string.
 * [thin/ra.hpp](include/thin/ra.hpp): a generic sized C-style array that can hold 0 elements.
 * [thin/revit.hpp](include/thin/revit.hpp): a generic reverse iterator.
 * [thin/scope_guard.hpp](include/thin/scope_guard.hpp): a guard that runs a given lambda when going out of scope.
