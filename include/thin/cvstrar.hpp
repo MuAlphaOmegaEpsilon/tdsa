@@ -10,7 +10,7 @@
 namespace thin
 {
 template<size_t N, class SIZE_T = size_t>
-struct strar
+struct cvstrar
 {
 	ra<cvstr, N, SIZE_T> arr {};
 
@@ -26,7 +26,7 @@ struct strar
 	ND CX const cvstr* end() CNX { return arr.end(); }
 };
 template<class... varargs>
-strar(varargs...) -> strar<sizeof...(varargs)>;
+cvstrar(varargs...) -> cvstrar<sizeof...(varargs)>;
 } // namespace thin
 
 #undef NX
