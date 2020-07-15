@@ -36,7 +36,7 @@ struct cvstr
 		assert(index < length);
 		return data[index];
 	}
-	// Conversions
+	// Operators
 	ND CX operator const char*() CNX { return data; }
 	// Iterators
 	ND CX const char* begin() CNX { return data; }

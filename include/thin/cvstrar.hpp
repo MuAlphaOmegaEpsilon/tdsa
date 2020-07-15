@@ -20,6 +20,9 @@ struct cvstrar
 	// Accessors
 	ND CX const cvstr& back() CNX { return arr.back(); }
 	ND CX const cvstr& operator[](size_t index) CNX { return arr[index]; }
+	// Operators
+	ND CX operator cvstr*() NX { return arr.begin(); }
+	ND CX operator const cvstr*() CNX { return arr.begin(); }
 	// Iterators
 	ND CX cvstr* begin() NX { return arr.begin(); }
 	ND CX cvstr* end() NX { return arr.end(); }

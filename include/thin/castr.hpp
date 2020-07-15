@@ -44,7 +44,7 @@ struct castr
 		assert(index < N);
 		return data[index];
 	}
-	// Conversions
+	// Operators
 	ND CX operator char*() NX { return data; }
 	ND CX operator const char*() CNX { return data; }
 	// Iterators

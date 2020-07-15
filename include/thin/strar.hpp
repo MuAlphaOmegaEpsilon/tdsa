@@ -21,6 +21,9 @@ struct strar
 	ND CX const char*& operator[](size_t index) NX { return arr[index]; }
 	ND CX const char* const& back() CNX { return arr.back(); }
 	ND CX const char* const& operator[](size_t index) CNX { return arr[index]; }
+	// Operators
+	ND CX operator const char**() NX { return arr.begin(); }
+	ND CX operator const char* const *() CNX { return arr.begin(); }
 	// Iterators
 	ND CX const char** begin() NX { return arr.begin(); }
 	ND CX const char** end() NX { return arr.end(); }

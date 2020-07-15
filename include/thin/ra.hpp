@@ -42,7 +42,7 @@ struct ra
 		assert(N - 1 < N);
 		return data[N - 1];
 	}
-	// Conversions
+	// Operators
 	ND CX operator T*() NX
 	{
 		if constexpr(!N) return nullptr;

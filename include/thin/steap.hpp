@@ -42,7 +42,7 @@ struct steap
 		assert(i < size);
 		return i[heap ? heap : stack];
 	}
-	// Conversions
+	// Operators
 	ND CX operator T*() NX { return heap ? heap : stack; }
 	ND CX operator const T*() CNX { return heap ? heap : stack; }
 	// Iterators

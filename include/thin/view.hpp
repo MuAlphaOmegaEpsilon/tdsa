@@ -39,7 +39,7 @@ struct view
 		assert(index < size);
 		return data[index];
 	}
-	// Conversions
+	// Operators
 	ND CX operator T*() NX { return data; }
 	ND CX operator const T*() CNX { return data; }
 	CX view& operator=(const T* other) NX
