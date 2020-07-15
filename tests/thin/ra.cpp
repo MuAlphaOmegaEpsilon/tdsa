@@ -20,11 +20,12 @@ int main()
 	using namespace thin;
 
 	// Compile-time checks
-	[[maybe_unused]] constexpr ra<int> zero_allowed {};
 	[[maybe_unused]] constexpr ra deduced_type_and_size {0, 1, 2, 3, 4};
+	constexpr ra<int> zero_allowed {};
 	constexpr ra<int, 10> zero_to_nine {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	constexpr ra<int, 5> partial {0, 1};
 	constexpr ra<int, 3> zero_init {};
+	static_assert(static_cast<const int*>(zero_allowed) == nullptr);
 	static_assert(count(ra {1, 2, 3}) == 3);
 	static_assert(zero_to_nine.size() == 10);
 	static_assert(zero_to_nine.back() == 9);

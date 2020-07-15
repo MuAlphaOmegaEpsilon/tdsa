@@ -54,10 +54,26 @@ struct ra
 		return data;
 	}
 	// Iterators
-	ND CX T* begin() NX { return operator T*(); }
-	ND CX T* end() NX { return operator T*() + N; }
-	ND CX const T* begin() CNX { return operator const T*(); }
-	ND CX const T* end() CNX { return operator const T*() + N; }
+	ND CX T* begin() NX
+	{
+		if constexpr(!N) return nullptr;
+		return operator T*();
+	}
+	ND CX T* end() NX
+	{
+		if constexpr(!N) return nullptr;
+		return operator T*() + N;
+	}
+	ND CX const T* begin() CNX
+	{
+		if constexpr(!N) return nullptr;
+		return operator const T*();
+	}
+	ND CX const T* end() CNX
+	{
+		if constexpr(!N) return nullptr;
+		return operator const T*() + N;
+	}
 };
 template<class T, class... varargs>
 ra(T first, varargs... list) -> ra<T, 1 + sizeof...(varargs)>;
