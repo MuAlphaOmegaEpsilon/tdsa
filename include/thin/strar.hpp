@@ -1,4 +1,5 @@
 #pragma once
+#include "default_size_t.hpp"
 #include "ra.hpp"
 
 #define NX noexcept
@@ -8,7 +9,7 @@
 
 namespace thin
 {
-template<size_t N = 0, class SIZE_T = size_t>
+template<size_t N = 0, class SIZE_T = DEFAULT_SIZE_T>
 struct strar
 {
 	ra<const char*, N, SIZE_T> arr {};

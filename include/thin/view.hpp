@@ -1,4 +1,5 @@
 #pragma once
+#include "default_size_t.hpp"
 #include <assert.h>
 #include <stddef.h>
 
@@ -9,7 +10,7 @@
 
 namespace thin
 {
-template<class T, class SIZE_T = size_t>
+template<class T, class SIZE_T = DEFAULT_SIZE_T>
 struct view
 {
 	T* data;

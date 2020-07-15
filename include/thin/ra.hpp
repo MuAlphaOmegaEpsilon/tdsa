@@ -1,4 +1,5 @@
 #pragma once
+#include "default_size_t.hpp"
 #include <assert.h>
 #include <stddef.h>
 
@@ -9,7 +10,7 @@
 
 namespace thin
 {
-template<class T, size_t N = 0, class SIZE_T = size_t>
+template<class T, size_t N = 0, class SIZE_T = DEFAULT_SIZE_T>
 struct ra
 {
 	T data[N ? N : 1];

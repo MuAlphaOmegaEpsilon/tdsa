@@ -1,6 +1,7 @@
 #pragma once
-#include "ra.hpp"
 #include "cvstr.hpp"
+#include "default_size_t.hpp"
+#include "ra.hpp"
 
 #define NX noexcept
 #define CNX const noexcept
@@ -9,7 +10,7 @@
 
 namespace thin
 {
-template<size_t N, class SIZE_T = size_t>
+template<size_t N, class SIZE_T = DEFAULT_SIZE_T>
 struct cvstrar
 {
 	ra<cvstr, N, SIZE_T> arr {};
