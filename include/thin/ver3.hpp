@@ -17,14 +17,11 @@ struct ver3
 	static constexpr int MAX_MAJOR_CHARS = 4; // 2^10 = 1024
 	static constexpr int MAX_MINOR_CHARS = 4; // 2^10 = 1024
 	static constexpr int MAX_PATCH_CHARS = 4; // 2^12 = 4096
-	static constexpr int MAX_C =
-		MAX_MAJOR_CHARS + MAX_MINOR_CHARS + MAX_PATCH_CHARS + 2 + 1;
+	static constexpr int MAX_C = MAX_MAJOR_CHARS + MAX_MINOR_CHARS + MAX_PATCH_CHARS + 2 + 1;
 	uint_fast16_t major;
 	uint_fast16_t minor;
 	uint_fast16_t patch;
-	CX ver3(uint32_t M, uint32_t m, uint32_t p) NX : major(M),
-													 minor(m),
-													 patch(p)
+	CX ver3(uint32_t M, uint32_t m, uint32_t p) NX : major(M), minor(m), patch(p)
 	{
 		assert(major < 1024);
 		assert(minor < 1024);
@@ -51,12 +48,7 @@ struct ver3
 		assert(major < 1024);
 		assert(minor < 1024);
 		assert(patch < 4096);
-		::snprintf(s,
-				   MAX_C,
-				   "%" PRIuFAST16 ".%" PRIuFAST16 ".%" PRIuFAST16,
-				   major,
-				   minor,
-				   patch);
+		::snprintf(s, MAX_C, "%" PRIuFAST16 ".%" PRIuFAST16 ".%" PRIuFAST16, major, minor, patch);
 		return s;
 	}
 	ND operator const char*() CNX { return operator castr<MAX_C>(); }

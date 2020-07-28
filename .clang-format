@@ -13,6 +13,7 @@ AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBraces: Allman
+ColumnLimit: 100
 IndentPPDirectives: BeforeHash
 IndentWidth: 4
 PointerAlignment: Left
