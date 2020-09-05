@@ -3,5 +3,13 @@ set -eu
 
 cd "$(dirname "$0")"
 
-clang-tidy-10 tests/algo/*.cpp --header-filter=.* --extra-arg="--std=c++2a"
-clang-tidy-10 tests/thin/*.cpp --header-filter=.* --extra-arg="--std=c++2a"
+for FILE in $(ls tests/algo/*.cpp); do
+	set -f
+	clang-tidy-10 ${FILE} --header-filter=.* --extra-arg="--std=c++2a"
+	set +f
+done
+for FILE in $(ls tests/thin/*.cpp); do
+	set -f
+	clang-tidy-10 ${FILE} --header-filter=.* --extra-arg="--std=c++2a"
+	set +f
+done
